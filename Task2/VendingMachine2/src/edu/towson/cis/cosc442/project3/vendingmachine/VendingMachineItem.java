@@ -21,7 +21,7 @@ public class VendingMachineItem {
 	 * @param name The name of the item
 	 * @param price The price of the item
 	 * @throws VendingMachineException Thrown if price is less than zero
-	 */
+	 */ 
 	public VendingMachineItem( String name, double price ) throws VendingMachineException {
 		this.name = name;
 		if( price < 0 ) {
