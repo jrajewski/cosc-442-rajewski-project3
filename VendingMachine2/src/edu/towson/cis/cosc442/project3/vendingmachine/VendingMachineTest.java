@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.towson.cis.cosc442.project2.vendingmachine;
+package edu.towson.cis.cosc442.project3.vendingmachine;
 
 import static org.junit.Assert.*;
 
@@ -55,7 +55,7 @@ public class VendingMachineTest {
 	@Test(expected=VendingMachineException.class)
 	public void testAddItemFailure() {
 		//fail("Not yet implemented");
-		VendingMachineItem addItem2 = new VendingMachineItem("Pass", 99999);
+		VendingMachineItem addItem2 = new VendingMachineItem("test", 99999);
 		
 		//using invalid code to throw exception
 		vendingMachineTest.addItem(addItem2, "E");

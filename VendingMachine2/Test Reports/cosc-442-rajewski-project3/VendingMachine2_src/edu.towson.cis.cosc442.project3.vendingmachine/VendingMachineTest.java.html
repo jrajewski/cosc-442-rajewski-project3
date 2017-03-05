@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>VendingMachineTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">cosc-442-rajewski-project3 (Mar 5, 2017 3:32:28 PM)</a> &gt; <a href="../../index.html" class="el_group">cosc-442-rajewski-project3</a> &gt; <a href="../index.html" class="el_bundle">VendingMachine2/src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineTest.java</span></div><h1>VendingMachineTest.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author ringo
+ *
+ */
+<span class="fc" id="L16">public class VendingMachineTest {</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	private VendingMachine vendingMachineTest;
+	
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L25">		vendingMachineTest = new VendingMachine();</span>
+<span class="fc" id="L26">	}</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L33">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem, java.lang.String)}.
+		Test to successfully add an item to the vending machine.
+	 */
+	@Test
+	public void testAddItemSuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L42">		VendingMachineItem addItem = new VendingMachineItem(&quot;Pass&quot;, 99999);</span>
+		
+<span class="fc" id="L44">		vendingMachineTest.addItem(addItem, &quot;A&quot;);</span>
+		
+<span class="fc" id="L46">		assertEquals(vendingMachineTest.getItem(&quot;A&quot;).getName(), &quot;Pass&quot;);</span>
+<span class="fc" id="L47">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#addItem(edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem, java.lang.String)}.
+		Test to fail adding an item to the vending machine.
+	 */
+	
+
+	@Test(expected=VendingMachineException.class)
+	public void testAddItemFailure() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L58">		VendingMachineItem addItem2 = new VendingMachineItem(&quot;test&quot;, 99999);</span>
+		
+		//using invalid code to throw exception
+<span class="nc" id="L61">		vendingMachineTest.addItem(addItem2, &quot;E&quot;);</span>
+
+		//assertNotEquals(vendingMachineTest.getItem(&quot;A&quot;), &quot;Pass&quot;);
+<span class="nc" id="L64">		assertNull(vendingMachineTest.getItem(&quot;E&quot;));</span>
+<span class="nc" id="L65">	}</span>
+
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#removeItem(java.lang.String)}.
+	 Tests successful removal of an item from the vending machine.
+	 */
+	@Test
+	public void testRemoveItemSuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L75">		VendingMachineItem addItem = new VendingMachineItem(&quot;Pass&quot;, 99999);</span>
+<span class="fc" id="L76">		vendingMachineTest.addItem(addItem, &quot;A&quot;);</span>
+		
+<span class="fc" id="L78">		vendingMachineTest.removeItem(&quot;A&quot;);</span>
+<span class="fc" id="L79">		assertNull(vendingMachineTest.getItem(&quot;A&quot;));</span>
+<span class="fc" id="L80">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#removeItem(java.lang.String)}.
+	 Tests failed removal of an item from the vending machine by testing if the exception is thrown.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testRemoveItemFailure() {
+		//fail(&quot;Not yet implemented&quot;);
+		//VendingMachineItem addItem1 = new VendingMachineItem(&quot;Pass&quot;, 99999);
+		//vendingMachineTest.addItem(addItem1, &quot;A&quot;);
+		
+<span class="nc" id="L92">		vendingMachineTest.removeItem(&quot;A&quot;);</span>
+		//assertNotNull(vendingMachineTest.getItem(&quot;A&quot;));
+<span class="nc" id="L94">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#insertMoney(double)}.
+	 Tests that the balance inserted to the vending machine is 
+	 */
+	@Test
+	public void testInsertMoneySuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L103">		vendingMachineTest.insertMoney(10.00);</span>
+<span class="fc" id="L104">		assertEquals(vendingMachineTest.getBalance(), 10.00, 0.0);</span>
+<span class="fc" id="L105">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#insertMoney(double)}.
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testInsertMoneyFailure() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="nc" id="L113">		vendingMachineTest.insertMoney(-10.00);</span>
+<span class="nc" id="L114">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#getBalance()}.
+	 Test to verify the correct initial balance is retrieved from the vending machine.
+	 */
+	@Test
+	public void testGetBalanceInitial() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L123">		assertEquals(vendingMachineTest.getBalance(), 0.0, 0.0);</span>
+<span class="fc" id="L124">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#getBalance()}.
+	 Test to verify the correct balance is retrieved from the vending machine after inserting money.
+	 */
+	@Test
+	public void testGetBalanceAdd() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L133">		vendingMachineTest.insertMoney(10.00);</span>
+<span class="fc" id="L134">		assertEquals(vendingMachineTest.getBalance(), 10.0, 0.0);</span>
+<span class="fc" id="L135">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
+	 Tests successful purchase.
+	 */
+	@Test
+	public void testMakePurchaseSuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L144">		VendingMachineItem addItem = new VendingMachineItem(&quot;Pass&quot;, 5.0);</span>
+<span class="fc" id="L145">		vendingMachineTest.addItem(addItem, &quot;A&quot;);</span>
+		
+<span class="fc" id="L147">		vendingMachineTest.insertMoney(10.00);</span>
+		
+<span class="fc" id="L149">		assertEquals(vendingMachineTest.makePurchase(&quot;A&quot;), true);</span>
+<span class="fc" id="L150">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
+	 Tests failure for insufficient funds for item.
+	 */
+	@Test
+	public void testMakePurchaseNoMoneyFailure() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L159">		VendingMachineItem addItem = new VendingMachineItem(&quot;Pass&quot;, 5.0);</span>
+<span class="fc" id="L160">		vendingMachineTest.addItem(addItem, &quot;A&quot;);</span>
+		
+<span class="fc" id="L162">		vendingMachineTest.insertMoney(0.0);</span>
+		
+<span class="fc" id="L164">		assertEquals(vendingMachineTest.makePurchase(&quot;A&quot;), false);</span>
+<span class="fc" id="L165">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#makePurchase(java.lang.String)}.
+	 Tests failure to vend item if there is no item in the given slot.
+	 */
+	@Test
+	public void testMakePurchaseNoItemFailure() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L174">		vendingMachineTest.insertMoney(10.0);</span>
+		
+<span class="fc" id="L176">		assertEquals(vendingMachineTest.makePurchase(&quot;A&quot;), false);</span>
+<span class="fc" id="L177">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachine#returnChange()}.
+	 Tests successful return of change to user.
+	 */
+	@Test
+	public void testReturnChangeSuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L186">		vendingMachineTest.insertMoney(10.0);</span>
+<span class="fc" id="L187">		vendingMachineTest.returnChange();</span>
+<span class="fc" id="L188">		assertEquals(vendingMachineTest.getBalance(), 0.0, 0.0);</span>
+<span class="fc" id="L189">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>cosc-442-rajewski-project3 (Mar 5, 2017 3:32:28 PM)</div></body></html>

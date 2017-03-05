@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>VendingMachineItemTest.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">cosc-442-rajewski-project3 (Mar 5, 2017 3:32:28 PM)</a> &gt; <a href="../../index.html" class="el_group">cosc-442-rajewski-project3</a> &gt; <a href="../index.html" class="el_bundle">VendingMachine2/src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemTest.java</span></div><h1>VendingMachineItemTest.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author ringo
+ *
+ */
+<span class="fc" id="L16">public class VendingMachineItemTest {</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L23">	}</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L30">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem#VendingMachineItem(java.lang.String, double)}.
+	 Tests successful VendingMachineItem creation. 
+	 */
+	@Test
+	public void testVendingMachineItemSuccess() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L39">		VendingMachineItem test = new VendingMachineItem(&quot;Skittles&quot;, 1.00);</span>
+<span class="fc" id="L40">		assertEquals(test.getName(), &quot;Skittles&quot;);</span>
+<span class="fc" id="L41">		assertEquals(test.getPrice(), 1.00, 0.0);</span>
+<span class="fc" id="L42">	}</span>
+	
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem#VendingMachineItem(java.lang.String, double)}.
+	 Tests failure of VendingMachineItem creation. 
+	 */
+	@Test(expected=VendingMachineException.class)
+	public void testVendingMachineItemPriceFail() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="nc" id="L51">		VendingMachineItem test = new VendingMachineItem(&quot;Skittles&quot;, -5.00);</span>
+<span class="nc" id="L52">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem#getName()}.
+	 Tests successful retrieval of a VendingMachineItem's name.
+	 */
+	@Test
+	public void testGetName() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L61">		VendingMachineItem test = new VendingMachineItem(&quot;Skittles&quot;, 1.00);</span>
+<span class="fc" id="L62">		assertEquals(test.getName(), &quot;Skittles&quot;);</span>
+<span class="fc" id="L63">	}</span>
+
+	/**
+	 * Test method for {@link edu.towson.cis.cosc442.project2.vendingmachine.VendingMachineItem#getPrice()}.
+	 */
+	@Test
+	public void testGetPrice() {
+		//fail(&quot;Not yet implemented&quot;);
+<span class="fc" id="L71">		VendingMachineItem test = new VendingMachineItem(&quot;Skittles&quot;, 1.00);</span>
+<span class="fc" id="L72">		assertEquals(test.getPrice(), 1.00, 0.0);</span>
+<span class="fc" id="L73">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>cosc-442-rajewski-project3 (Mar 5, 2017 3:32:28 PM)</div></body></html>
